@@ -12,3 +12,11 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://vardhamanpaperproducts.com/sitemap.xml
+
+# Crawl-delay for bots
+Crawl-delay: 10

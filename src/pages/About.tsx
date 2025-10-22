@@ -1,38 +1,34 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 
 const milestones = [
   {
-    year: "2004",
+    year: "1995",
     title: "Company Founded",
-    description: "Started operations in Aurangabad, Maharashtra",
+    description: "Started Thermal Paper and Adding Machine roll manufacturing",
   },
   {
-    year: "2008",
-    title: "Xerox Paper Trading",
-    description: "Expanded into premium A4, A3, A5 paper distribution",
+    year: "2003",
+    title: "Pre Printed Paper Roll Manufacturing",
+    description: "Started manufacturing ATM machine rolls",
+  },  
+  {
+    year: "2009",
+    title: "Copier Paper Trading",
+    description: "Partnerd with B2B, Bilt, Reflection for copier paper distribution",
   },
   {
-    year: "2012",
+    year: "2018",
     title: "Barcode Labels Manufacturing",
-    description: "Began manufacturing high-quality barcode labels",
-  },
-  {
-    year: "2016",
-    title: "Thermal Paper Rolls",
-    description: "Started manufacturing thermal paper rolls with imported dust-free paper",
-  },
-  {
-    year: "2019",
-    title: "Pan-India Presence",
-    description: "Established distribution network across India",
+    description: "Began manufacturing high-quality barcode labels and TTR Ribbons",
   },
   {
     year: "2024",
-    title: "20 Years Excellence",
-    description: "Celebrating two decades of quality and trust",
+    title: "Manufacturing multi colour Pre Printed Barcode Labels",
+    description: "Expanded manufacturing capabilities to include multi-colour barcode labels",
   },
 ];
 
@@ -46,8 +42,23 @@ const values = [
 ];
 
 const About = () => {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Vardhaman Paper Products",
+    "description": "Learn about Vardhaman Paper Products - 20+ years of excellence in manufacturing barcode labels, thermal paper rolls, and copier paper in Aurangabad, Maharashtra",
+    "url": "https://vardhamanpaperproducts.com/about"
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="About Us - 20+ Years of Excellence | Vardhaman Paper Products Aurangabad"
+        description="Vardhaman Paper Products - Since 2004, manufacturing premium barcode paper rolls, thermal paper (Hansol), BOPP tape & copier paper in MIDC Waluj, Aurangabad. Trusted across Maharashtra for quality & service."
+        keywords="Vardhaman Paper Products Aurangabad, paper manufacturer MIDC Waluj, thermal paper manufacturer Maharashtra, barcode label company Aurangabad, Hansol thermal paper supplier"
+        canonicalUrl="https://vardhamanpaperproducts.com/about"
+        schemaData={schemaData}
+      />
       <Navbar />
       
       {/* Hero Section */}
@@ -72,15 +83,16 @@ const About = () => {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold mb-6">About Vardhaman Paper Products</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  Founded in Aurangabad, Maharashtra, Vardhaman Paper Products has been a trusted name 
+                  Founded in 2004 in MIDC Waluj, Aurangabad, Maharashtra, Vardhaman Paper Products has been a trusted name 
                   in the paper industry for over 20 years. What started as a small trading business has 
                   grown into a comprehensive paper products manufacturer and distributor serving clients 
                   across Maharashtra and India.
                 </p>
                 <p className="text-lg text-muted-foreground mb-4">
-                  We pride ourselves on delivering premium quality products, from xerox paper to specialized 
-                  barcode labels and thermal paper rolls. Our commitment to excellence and customer satisfaction 
-                  has helped us build strong relationships with clients across various industries.
+                  We specialize in manufacturing high-quality <strong>thermal paper rolls using imported Hansol paper</strong>, 
+                  <strong>barcode paper rolls</strong>, <strong>barcode label printing</strong>, and <strong>BOPP tape</strong>. 
+                  Additionally, we are authorized distributors of premium copier paper brands including <strong>B2B, NR, and Reflection</strong>. 
+                  Our commitment to excellence and customer satisfaction has helped us build strong relationships with clients across various industries.
                 </p>
                 <p className="text-lg text-muted-foreground">
                   Today, we continue to innovate and expand our product range while maintaining the quality 
@@ -109,12 +121,11 @@ const About = () => {
                 {milestones.map((milestone, index) => (
                   <div
                     key={index}
-                    className={`flex items-center gap-8 animate-fade-in ${
-                      index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
+                    className="flex items-center gap-8 animate-fade-in"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className={`flex-1 ${index % 2 === 0 ? "text-right" : "text-left"} hidden md:block`}>
+                    {/* Left side - shows cards for even indexes on desktop */}
+                    <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"} hidden md:block`}>
                       {index % 2 === 0 && (
                         <Card className="shadow-medium hover:shadow-large transition-shadow">
                           <CardContent className="p-6">
@@ -126,18 +137,23 @@ const About = () => {
                       )}
                     </div>
                     
+                    {/* Center dot */}
                     <div className="relative z-10 hidden md:block">
                       <div className="w-4 h-4 rounded-full bg-primary ring-4 ring-background"></div>
                     </div>
                     
-                    <div className={`flex-1 ${index % 2 === 0 ? "text-left" : "text-right"}`}>
-                      <Card className="shadow-medium hover:shadow-large transition-shadow md:hidden block mb-4">
+                    {/* Right side - shows cards for odd indexes on desktop, all cards on mobile */}
+                    <div className={`flex-1 ${index % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
+                      {/* Mobile view - always show */}
+                      <Card className="shadow-medium hover:shadow-large transition-shadow md:hidden block">
                         <CardContent className="p-6">
                           <div className="text-2xl font-bold text-primary mb-2">{milestone.year}</div>
                           <h3 className="text-xl font-semibold mb-2">{milestone.title}</h3>
                           <p className="text-muted-foreground">{milestone.description}</p>
                         </CardContent>
                       </Card>
+                      
+                      {/* Desktop view - only show for odd indexes */}
                       {index % 2 !== 0 && (
                         <Card className="shadow-medium hover:shadow-large transition-shadow hidden md:block">
                           <CardContent className="p-6">

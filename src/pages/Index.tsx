@@ -2,12 +2,28 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ProductCategories from "@/components/ProductCategories";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building2, Target, Zap } from "lucide-react";
 
 const Index = () => {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Vardhaman Paper Products - Home",
+    "description": "Leading manufacturer of barcode paper rolls, thermal paper rolls (Hansol), BOPP tape, barcode label printing & copier paper in Aurangabad, Maharashtra",
+    "url": "https://vardhamanpaperproducts.com/"
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Vardhaman Paper Products - Barcode Labels, Thermal Paper Rolls & BOPP Tape in Aurangabad"
+        description="Leading manufacturer & supplier of barcode paper rolls, thermal paper rolls (Hansol paper), BOPP tape, barcode label printing & copier paper (B2B, NR, Reflection) in MIDC Waluj, Aurangabad, Maharashtra. 20+ years of excellence."
+        keywords="barcode paper roll Aurangabad, thermal paper roll Maharashtra, BOPP tape supplier, barcode label printing Aurangabad, copier paper B2B NR Reflection, Hansol thermal paper, paper products MIDC Waluj, xerox paper Aurangabad"
+        canonicalUrl="https://vardhamanpaperproducts.com/"
+        schemaData={schemaData}
+      />
       <Navbar />
       <Hero />
       <ProductCategories />

@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Vardhaman Paper Products Manufacturing"
+          alt="Vardhaman Paper Products - Barcode Paper Rolls, Thermal Paper, BOPP Tape Manufacturer in Aurangabad Maharashtra"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/50"></div>
@@ -21,12 +21,12 @@ const Hero = () => {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
             Quality Paper Products
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
-              Since Two Decades
+              Since 2004
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
-            Leading manufacturer and trader of premium xerox paper, barcode
-            labels, thermal paper rolls, and more across Maharashtra and India.
+            Leading manufacturer of barcode paper rolls, thermal paper rolls (Hansol), 
+            BOPP tape, and copier paper (B2B, NR, Reflection) in MIDC Waluj, Aurangabad, Maharashtra.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in">
             <Button size="lg" className="bg-gradient-primary text-lg">

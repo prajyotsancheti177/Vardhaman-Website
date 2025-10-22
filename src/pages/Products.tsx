@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -39,7 +40,7 @@ const productCategories = [
         features: ["Premium quality", "Enhanced whiteness", "Consistent quality"],
       },
       {
-        name: "A3 Paper",
+        name: "NR 70 GSM A/4",
         image: xeroxImage,
         size: "297 x 420 mm",
         gsm: "70/75/80 GSM",
@@ -148,8 +149,23 @@ const productCategories = [
 ];
 
 const Products = () => {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Products - Vardhaman Paper Products",
+    "description": "Browse our complete range of barcode paper rolls, thermal paper rolls (Hansol), BOPP tape, barcode labels, and copier paper (B2B, NR, Reflection) in Aurangabad",
+    "url": "https://vardhamanpaperproducts.com/products"
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Products - Barcode Rolls, Thermal Paper & BOPP Tape | Vardhaman Paper Products Aurangabad"
+        description="Shop barcode paper rolls, thermal paper rolls (Hansol paper), BOPP tape, barcode label printing & copier paper (B2B, NR, Reflection brands). Premium quality products from MIDC Waluj, Aurangabad, Maharashtra."
+        keywords="buy barcode paper rolls, thermal paper rolls Hansol, BOPP tape price, barcode labels Aurangabad, B2B copier paper, NR paper, Reflection paper, thermal paper manufacturer Maharashtra"
+        canonicalUrl="https://vardhamanpaperproducts.com/products"
+        schemaData={schemaData}
+      />
       <Navbar />
       
       {/* Hero Section */}
