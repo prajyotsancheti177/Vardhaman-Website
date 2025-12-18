@@ -16,7 +16,7 @@ Disallow: /admin/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://vardhamanpaperproducts.com/sitemap.xml
+Sitemap: https://vardhamanpaper.com/sitemap.xml
 
 # Crawl-delay for bots
 Crawl-delay: 10
